@@ -173,14 +173,14 @@
       margin-top: 40px;
     }
     .empathy-list li {
-      padding: 20px 24px;
+      padding: 22px 28px;
       border-left: 3px solid var(--gold);
       background: var(--dark-3);
       margin-bottom: 12px;
-      font-size: 15px;
+      font-size: 17px;
       color: var(--cream);
       font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
-      line-height: 1.7;
+      line-height: 1.8;
     }
     .empathy-list li::before {
       content: '──　';
@@ -202,33 +202,45 @@
     .benefits { background: var(--dark); }
     .benefit-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
       margin-top: 48px;
     }
     .benefit-card {
       background: var(--dark-3);
       border: 1px solid rgba(201,168,76,0.2);
-      padding: 32px 24px;
+      padding: 40px 32px;
       text-align: center;
       transition: border-color 0.3s;
     }
     .benefit-card:hover { border-color: var(--gold); }
     .benefit-icon {
-      font-size: 32px;
-      margin-bottom: 16px;
+      width: 56px;
+      height: 56px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: var(--gold);
+      font-size: 20px;
+      font-family: 'Georgia', serif;
+      font-style: italic;
+      letter-spacing: 1px;
     }
     .benefit-card h3 {
-      font-size: 16px;
+      font-size: 18px;
       color: var(--gold);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
       font-weight: 700;
+      letter-spacing: 1px;
     }
     .benefit-card p {
-      font-size: 13px;
+      font-size: 15px;
       color: var(--cream-dim);
-      line-height: 1.8;
+      line-height: 1.9;
       font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
     }
 
@@ -266,9 +278,9 @@
       font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
     }
     .program-content p {
-      font-size: 14px;
+      font-size: 16px;
       color: var(--cream);
-      line-height: 1.8;
+      line-height: 1.9;
       font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
     }
 
@@ -311,9 +323,9 @@
       margin-bottom: 16px;
     }
     .speaker-bio {
-      font-size: 13px;
+      font-size: 15px;
       color: var(--cream-dim);
-      line-height: 1.9;
+      line-height: 2.0;
       font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
     }
 
@@ -497,22 +509,22 @@
 
     <div class="benefit-grid">
       <div class="benefit-card">
-        <div class="benefit-icon">👔</div>
+        <div class="benefit-icon">I</div>
         <h3>選ばれる装い</h3>
         <p>「稼いでいる人」ではなく「格のある人」に見せる装いの法則を、プロから直接学ぶ</p>
       </div>
       <div class="benefit-card">
-        <div class="benefit-icon">✨</div>
+        <div class="benefit-icon">II</div>
         <h3>内側からの輝き</h3>
         <p>第一印象を変えるスキンケアと美容体験。ビジネスの前に、人としての魅力を磨く</p>
       </div>
       <div class="benefit-card">
-        <div class="benefit-icon">🏉</div>
+        <div class="benefit-icon">III</div>
         <h3>アスリートの思考</h3>
         <p>トップアスリートが実践するビジネスマインドで、停滞を突破するエネルギーをもらう</p>
       </div>
       <div class="benefit-card">
-        <div class="benefit-icon">🍷</div>
+        <div class="benefit-icon">IV</div>
         <h3>本物の人脈</h3>
         <p>厳選されたワインと共に、同じ志を持つ経営者との深い交流。質の高い仲間に出会う</p>
       </div>
@@ -617,7 +629,7 @@
 
       <div class="speaker-card">
         <div class="speaker-photo" style="padding:0; overflow:hidden;">
-          <img src="matsushita-misa.jpg" alt="松下美佐" style="width:100%;height:240px;object-fit:cover;object-position:center top;">
+          <img src="matsushita-misa.jpg" alt="松下美佐" style="width:100%;height:240px;object-fit:cover;object-position:center 35%;">
         </div>
         <div class="speaker-info">
           <div class="speaker-role">BEAUTY EXPERT / 造顔メソッド開発者</div>
