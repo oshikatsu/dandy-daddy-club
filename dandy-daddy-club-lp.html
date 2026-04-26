@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dandy Daddy Club 特別サロン in 東銀座 | 2026年5月17日（日）</title>
+  <style>
+    /* ========== RESET & BASE ========== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'Georgia', serif;
+      background: #0a0a0a;
+      color: #e8e0d0;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ========== COLOR PALETTE ========== */
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --dark: #0a0a0a;
+      --dark-2: #111111;
+      --dark-3: #1a1a1a;
+      --dark-4: #222222;
+      --cream: #e8e0d0;
+      --cream-dim: #b0a898;
+      --white: #ffffff;
+    }
+
+    /* ========== UTILITIES ========== */
+    .gold { color: var(--gold); }
+    .text-center { text-align: center; }
+    .section-wrap { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+    .divider {
+      width: 60px; height: 2px;
+      background: var(--gold);
+      margin: 20px auto;
+    }
+    .divider-left {
+      width: 60px; height: 2px;
+      background: var(--gold);
+      margin: 16px 0;
+    }
+
+    /* ========== GOLD TOP BAR ========== */
+    .top-bar {
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      background: linear-gradient(160deg, #0d0d0d 0%, #1a1205 50%, #0a0a0a 100%);
+      padding: 80px 24px 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(ellipse at center, rgba(201,168,76,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-label {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 3px;
+      padding: 6px 20px;
+      margin-bottom: 32px;
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    }
+    .hero-main {
+      font-size: clamp(28px, 6vw, 48px);
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .hero-main .accent {
+      color: var(--gold);
+    }
+    .hero-sub {
+      font-size: clamp(14px, 3vw, 18px);
+      color: var(--cream-dim);
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .hero-meta-item {
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.3);
+      padding: 10px 20px;
+      font-size: 14px;
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    }
+    .hero-meta-item .label {
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 2px;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+      color: #0a0a0a;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 18px 48px;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(201,168,76,0.4);
+    }
+    .btn-sub-text {
+      font-size: 12px;
+      color: var(--cream-dim);
+      margin-top: 12px;
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    }
+
+    /* ========== SECTION COMMON ========== */
+    section { padding: 80px 0; }
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--gold);
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 700;
+      line-height: 1.5;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .section-lead {
+      font-size: 15px;
+      color: var(--cream-dim);
+      line-height: 1.9;
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    }
+
+    /* ========== EMPATHY ========== */
+    .empathy {
+      background: var(--dark-2);
+    }
+    .empathy-list {
+      list-style: none;
+      margin-top: 40px;
+    }
+    .empathy-list li {
+      padding: 20px 24px;
+      border-left: 3px solid var(--gold);
+      background: var(--dark-3);
+      margin-bottom: 12px;
+      font-size: 15px;
+      color: var(--cream);
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      line-height: 1.7;
+    }
+    .empathy-list li::before {
+      content: '──　';
+      color: var(--gold);
+      font-size: 12px;
+    }
+    .empathy-closing {
+      margin-top: 40px;
+      padding: 32px;
+      border: 1px solid rgba(201,168,76,0.3);
+      text-align: center;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.8;
+    }
+
+    /* ========== BENEFITS ========== */
+    .benefits { background: var(--dark); }
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .benefit-card {
+      background: var(--dark-3);
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 32px 24px;
+      text-align: center;
+      transition: border-color 0.3s;
+    }
+    .benefit-card:hover { border-color: var(--gold); }
+    .benefit-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+    .benefit-card h3 {
+      font-size: 16px;
+      color: var(--gold);
+      margin-bottom: 12px;
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      font-weight: 700;
+    }
+    .benefit-card p {
+      font-size: 13px;
+      color: var(--cream-dim);
+      line-height: 1.8;
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    }
+
+    /* ========== PROGRAM ========== */
+    .program { background: var(--dark-2); }
+    .program-list { margin-top: 48px; }
+    .program-item {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 24px;
+      padding: 32px 0;
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      align-items: start;
+    }
+    .program-item:last-child { border-bottom: none; }
+    .program-number {
+      font-size: 32px;
+      font-weight: 700;
+      color: rgba(201,168,76,0.25);
+      line-height: 1;
+      font-family: 'Georgia', serif;
+    }
+    .program-content h3 {
+      font-size: 17px;
+      color: var(--gold);
+      margin-bottom: 6px;
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      font-weight: 700;
+    }
+    .program-content .speaker {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--cream-dim);
+      margin-bottom: 10px;
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    }
+    .program-content p {
+      font-size: 14px;
+      color: var(--cream);
+      line-height: 1.8;
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    }
+
+    /* ========== SPEAKERS ========== */
+    .speakers { background: var(--dark); }
+    .speaker-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .speaker-card {
+      border: 1px solid rgba(201,168,76,0.2);
+      overflow: hidden;
+    }
+    .speaker-photo {
+      width: 100%;
+      height: 240px;
+      background: var(--dark-4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cream-dim);
+      font-size: 13px;
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .speaker-info { padding: 28px; }
+    .speaker-role {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      margin-bottom: 8px;
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    }
+    .speaker-name {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .speaker-bio {
+      font-size: 13px;
+      color: var(--cream-dim);
+      line-height: 1.9;
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    }
+
+    /* ========== EVENT DETAILS ========== */
+    .event-details {
+      background: linear-gradient(160deg, #1a1205 0%, #0d0d0d 100%);
+    }
+    .detail-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 40px;
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    }
+    .detail-table tr {
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .detail-table td {
+      padding: 18px 16px;
+      vertical-align: top;
+      font-size: 15px;
+    }
+    .detail-table td:first-child {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 2px;
+      width: 100px;
+      white-space: nowrap;
+    }
+    .detail-table td:last-child {
+      color: var(--cream);
+    }
+    .seat-warning {
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.3);
+      padding: 20px 24px;
+      margin-top: 32px;
+      text-align: center;
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    }
+    .seat-warning span {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 17px;
+    }
+
+    /* ========== CTA SECTION ========== */
+    .cta-section {
+      background: var(--dark-2);
+      text-align: center;
+      padding: 100px 24px;
+    }
+    .cta-section .section-title { margin-bottom: 16px; }
+    .cta-section .section-lead { margin-bottom: 40px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-price {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 8px;
+      font-family: 'Georgia', serif;
+    }
+    .cta-price-label {
+      font-size: 13px;
+      color: var(--cream-dim);
+      margin-bottom: 40px;
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(201,168,76,0.2);
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-size: 16px;
+      letter-spacing: 4px;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .footer-note {
+      font-size: 12px;
+      color: var(--cream-dim);
+      font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      line-height: 1.9;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 600px) {
+      .hero { padding: 60px 20px 56px; }
+      section { padding: 60px 0; }
+      .program-item { grid-template-columns: 40px 1fr; gap: 16px; }
+      .detail-table td:first-child { width: 80px; font-size: 11px; }
+      .cta-section { padding: 72px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ゴールドトップバー -->
+<div class="top-bar"></div>
+
+<!-- ===============================
+     HERO
+=============================== -->
+<section class="hero">
+  <div class="hero-label">DANDY DADDY CLUB — SPECIAL SALON IN HIGASHI-GINZA</div>
+
+  <h1 class="hero-main">
+    稼ぐだけ経営者より、<br>
+    <span class="accent">モテる経営者へ。</span>
+  </h1>
+
+  <p class="hero-sub">
+    人を惹きつけ、運を引き寄せる<br>
+    「経営者の魅力学」とスペシャル交流会
+  </p>
+
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <span class="label">DATE</span>
+      2026年5月17日（日）
+    </div>
+    <div class="hero-meta-item">
+      <span class="label">VENUE</span>
+      東銀座 デルマール
+    </div>
+    <div class="hero-meta-item">
+      <span class="label">FEE</span>
+      ¥8,000
+    </div>
+    <div class="hero-meta-item">
+      <span class="label">CAPACITY</span>
+      定員25名（残席僅少）
+    </div>
+  </div>
+
+  <a href="https://forms.gle/9ekV4xpWS2ZCci128" class="btn-primary" target="_blank" rel="noopener">
+    今すぐ申し込む →
+  </a>
+  <p class="btn-sub-text">※ Googleフォームに移動します</p>
+</section>
+
+
+<!-- ===============================
+     EMPATHY — 悩みへの共感
+=============================== -->
+<section class="empathy">
+  <div class="section-wrap">
+    <span class="section-label">DO YOU FEEL THIS WAY?</span>
+    <h2 class="section-title">あなたは今、こんなことを感じていませんか？</h2>
+    <div class="divider-left"></div>
+
+    <ul class="empathy-list">
+      <li>ビジネスの結果は出ているのに、「何かが足りない」と感じている</li>
+      <li>見た目や魅力の磨き方が、正直よくわからない</li>
+      <li>経営者として成功しているのに、なぜか「選ばれていない感」がある</li>
+      <li>付き合う人のレベルを上げたいが、その機会がなかなかない</li>
+      <li>数字を追い続けていて、自分自身を磨く時間が取れていない</li>
+    </ul>
+
+    <div class="empathy-closing">
+      稼ぐことは、もう十分できている。<br>
+      次のステージは——<strong style="color: var(--gold);">「選ばれる経営者」</strong>になることだ。
+    </div>
+  </div>
+</section>
+
+
+<!-- ===============================
+     BENEFITS
+=============================== -->
+<section class="benefits">
+  <div class="section-wrap">
+    <span class="section-label">WHAT YOU WILL GAIN</span>
+    <h2 class="section-title">このイベントで、あなたが手に入れるもの</h2>
+    <div class="divider-left"></div>
+    <p class="section-lead">
+      一夜限りのサロンで、「モテる経営者」の核心に触れる。
+    </p>
+
+    <div class="benefit-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">👔</div>
+        <h3>選ばれる装い</h3>
+        <p>「稼いでいる人」ではなく「格のある人」に見せる装いの法則を、プロから直接学ぶ</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">✨</div>
+        <h3>内側からの輝き</h3>
+        <p>第一印象を変えるスキンケアと美容体験。ビジネスの前に、人としての魅力を磨く</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🏉</div>
+        <h3>アスリートの思考</h3>
+        <p>トップアスリートが実践するビジネスマインドで、停滞を突破するエネルギーをもらう</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🍷</div>
+        <h3>本物の人脈</h3>
+        <p>厳選されたワインと共に、同じ志を持つ経営者との深い交流。質の高い仲間に出会う</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===============================
+     PROGRAM
+=============================== -->
+<section class="program">
+  <div class="section-wrap">
+    <span class="section-label">PROGRAM</span>
+    <h2 class="section-title">当日のプログラム</h2>
+    <div class="divider-left"></div>
+
+    <div class="program-list">
+
+      <div class="program-item">
+        <div class="program-number">01</div>
+        <div class="program-content">
+          <h3>スペシャルファッション講座</h3>
+          <div class="speaker">by 中島ダダ</div>
+          <p>
+            「選ばれる経営者の装い、池おじの作り方」<br>
+            外見は最初のメッセージ。何百万の言葉より、一秒の佇まいが人を動かす。
+            経営者として"格"を纏う装いの本質を、ファッションのプロが伝授。
+          </p>
+        </div>
+      </div>
+
+      <div class="program-item">
+        <div class="program-number">02</div>
+        <div class="program-content">
+          <h3>美容デモンストレーション</h3>
+          <div class="speaker">by 松下美佐</div>
+          <p>
+            スキンケアと「泡立て」美容体験。<br>
+            肌は正直だ。どれだけ着飾っても、肌の質感がその人の"格"を決める。
+            プロが実演するスキンケアの秘訣と、自宅でできる美肌習慣を体験。
+          </p>
+        </div>
+      </div>
+
+      <div class="program-item">
+        <div class="program-number">03</div>
+        <div class="program-content">
+          <h3>アスリート・トークショー</h3>
+          <div class="speaker">現役ラグビートップリーグ選手</div>
+          <p>
+            「現役ラグビートップリーグ選手から学ぶビジネスマインド」<br>
+            修羅場を潜り抜けたアスリートの思考法は、ビジネスの逆境をも突破する。
+            試合と経営に共通する「折れない精神」と「勝ち続ける習慣」を語ってもらう。
+          </p>
+        </div>
+      </div>
+
+      <div class="program-item">
+        <div class="program-number">04</div>
+        <div class="program-content">
+          <h3>プレミアム交流会</h3>
+          <div class="speaker">厳選ワインと共に</div>
+          <p>
+            厳選された本物のワインを愉しみながら、質の高い人脈を築く時間。
+            「稼いでいる人」ではなく「魅力的な人」が集まる場所で、
+            本物の仲間に出会ってほしい。
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===============================
+     SPEAKERS
+=============================== -->
+<section class="speakers">
+  <div class="section-wrap">
+    <span class="section-label">SPEAKERS</span>
+    <h2 class="section-title">登壇者プロフィール</h2>
+    <div class="divider-left"></div>
+
+    <div class="speaker-grid">
+
+      <div class="speaker-card">
+        <div class="speaker-photo" style="padding:0; overflow:hidden;">
+          <img src="nakajima-dada.jpg" alt="中島昌俊（ダダ）" style="width:100%;height:240px;object-fit:cover;object-position:center top;">
+        </div>
+        <div class="speaker-info">
+          <div class="speaker-role">FASHION LECTURER / 人生仕立師</div>
+          <div class="speaker-name">中島 昌俊（ダダ）</div>
+          <p class="speaker-bio">
+            20歳で株式会社ヨジヤマモトに入社。パリコレクションへの同行やバブル期の最前線を経験し、アパレル界の深淵に触れる。29歳で独立後、33歳で単身渡米しテント一つでインディアンの保留地に暮らすという異色の経歴を持つ。<br><br>
+            帰国後、ゼニア・グッチ・ベルサーチ・ダナキャランなど世界一流ブランドの運営に携わり、長年エグゼクティブの装いをプロデュース。現在は「経営者のスーツは看板である」を理念に、9割が経営者というクライアントに対し、色気と品格を兼ね備えたイタリア流の仕立てを提案。フジテレビ『Mr.サンデー』でも特集。<br><br>
+            オーダースーツを大黒柱に、算命学・コーチング・美容の4つの柱で「カリスマを創る人生仕立師」として活動。
+          </p>
+        </div>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-photo" style="padding:0; overflow:hidden;">
+          <img src="matsushita-misa.jpg" alt="松下美佐" style="width:100%;height:240px;object-fit:cover;object-position:center top;">
+        </div>
+        <div class="speaker-info">
+          <div class="speaker-role">BEAUTY EXPERT / 造顔メソッド開発者</div>
+          <div class="speaker-name">松下 美佐</div>
+          <p class="speaker-bio">
+            某有名化粧品ブランドの優良顧客専属エステティシャンとして、関西地区の百貨店で施術を担当。後に化粧品メーカーの取締役として化粧品・技術開発に携わり、日韓共同の造顔メソッドを開発。<br><br>
+            韓国美容会の第一人者・ハンドスク教授に師事し、唯一無二の独自技術を確立。現在はエステティックの域を超え、接骨院・ヘアサロン業界の国家資格者への技術指導も行う。<br><br>
+            「美は外からも内からも」——その真意を、今夜あなたに伝えます。
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===============================
+     EVENT DETAILS
+=============================== -->
+<section class="event-details">
+  <div class="section-wrap">
+    <span class="section-label">EVENT DETAILS</span>
+    <h2 class="section-title">イベント詳細</h2>
+    <div class="divider-left"></div>
+
+    <table class="detail-table">
+      <tr>
+        <td>日時</td>
+        <td>2026年5月17日（日）</td>
+      </tr>
+      <tr>
+        <td>会場</td>
+        <td>
+          デルマール東銀座店<br>
+          東京都中央区築地4-1-1 東劇ビル地下1階<br>
+          <small style="color: var(--cream-dim); font-size: 12px;">東京メトロ日比谷線「東銀座駅」徒歩1分</small>
+        </td>
+      </tr>
+      <tr>
+        <td>参加費</td>
+        <td><strong style="color: var(--gold);">¥8,000</strong>（当日払い可）</td>
+      </tr>
+      <tr>
+        <td>定員</td>
+        <td>25名限定（先着順）</td>
+      </tr>
+      <tr>
+        <td>対象</td>
+        <td>
+          ・自分の魅力・外見を格上げしたい経営者・個人事業主<br>
+          ・質の高い人脈・仲間が欲しい方<br>
+          ・アスリートのマインドから刺激を受けたい方
+        </td>
+      </tr>
+    </table>
+
+    <div class="seat-warning">
+      <span>定員25名の限定サロンです。</span><br>
+      <small style="color: var(--cream-dim); font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;">
+        満席になり次第、受付を終了します。お早めにどうぞ。
+      </small>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===============================
+     CTA
+=============================== -->
+<section class="cta-section">
+  <span class="section-label">APPLY NOW</span>
+  <h2 class="section-title">
+    次のステージへ——<br>
+    <span class="gold">「選ばれる経営者」</span>として歩き始める夜
+  </h2>
+  <div class="divider"></div>
+  <p class="section-lead">
+    25名限定。本物が集まる場所で、あなたを格上げする一夜を。
+  </p>
+
+  <div class="cta-price">¥8,000</div>
+  <div class="cta-price-label">参加費（税込）/ 定員25名</div>
+
+  <a href="https://forms.gle/9ekV4xpWS2ZCci128" class="btn-primary" target="_blank" rel="noopener">
+    申し込みフォームへ進む →
+  </a>
+  <p class="btn-sub-text">お申し込みはGoogleフォームで受け付けています</p>
+</section>
+
+
+<!-- ===============================
+     FOOTER
+=============================== -->
+<footer>
+  <div class="footer-logo">DANDY DADDY CLUB</div>
+  <p class="footer-note">
+    特別サロン in 東銀座<br>
+    2026年5月17日（日）｜デルマール東銀座店<br><br>
+    お問い合わせはGoogleフォームまたはSNSのメッセージにてお願いします。
+  </p>
+</footer>
+
+</body>
+</html>
+```
